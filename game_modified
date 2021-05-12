@@ -1,0 +1,70 @@
+import random
+from playsound import playsound
+print("your song is playing now...")
+playsound( "D:\\naruto remix\\Ost. Naruto ( Sasuke theme ) Hyouhaku Kokuten.mp3", False )
+print("welcome to gaming zone stone scissors paper ! let's play yippee\n")
+print("you must know the game rule before playing")
+attempt=1
+your_score=0
+c_score=0
+while attempt<=7: 
+    print("you have only 7 chance to be shows you as a good gamer ")
+    lst = ["s","st","p"]
+    ran= random.choice(lst)
+    inp=input("enter your choice \nstone(st)\nscissors(s)\npaper(p)\n")
+    inp.lower()
+    if inp=="s" and ran=="s":
+        print("tie")
+        print(f"\n you choose scissors and computer is also choose same" )
+        print("no body gets point")
+    elif inp=="st" and ran=="st" :
+        print("tie")
+        print(f"\n you choose stone and computer is also  choose stone ")
+        print("no body gets point")
+    elif inp=="p" and ran =="p":
+        print("tie")
+        print("f\n you choose paper and computer is also choose paper"  )
+        print("no body gets point")
+    elif inp=="st" and ran =="p":
+        print("computer takes point 1")
+        c_score +=1
+        print("computer choose paper and you choose stone")
+        print("oohh! YOU LOOSE TRY AGAIN!")
+    elif inp=="p" and ran=="st":
+        print("you take one 1 point")
+        your_score +=1
+        print("you choose papercomputer choose stone")
+        print("you win congrats!")
+    elif  inp=="st" and ran =="s":
+        your_score +=1
+        print("you choose stone computer choose scissor")
+        print("you win congrats!")
+    elif inp=="s" and ran=="st" :
+        c_score +=1
+        print("computer choose stone and you choose scissor")
+        print("oohh! YOU LOOSE TRY AGAIN!")
+    elif inp=="s" and ran=="p":
+        your_score +=1
+        print("you choose scissor computer choose paper")
+        print("you win congrats!")
+    elif inp=="p" and ran=="s":
+        c_score +=1
+        print("computer choose scissor and you choose paper")
+        print("oohh! YOU LOOSE TRY AGAIN!")
+    else:
+        print("invalid input")
+        continue
+    print(f"number of guess left {7-attempt}" )    
+    attempt +=1
+    if attempt>7:
+        print("game over")
+
+print(f"your score {your_score}\n computer score {c_score }") 
+if c_score<your_score :
+    print("wow! you win the game ! congrats!! ")
+elif c_score==your_score :
+    print ("tie game ")
+    print("try again!")
+else:
+    print("you lost the game better luck for next time ")
+    print("!better luck for next time!") 
